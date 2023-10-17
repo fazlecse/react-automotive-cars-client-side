@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, profileUpdate } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -46,9 +46,12 @@ const Register = () => {
         console.log(user);
         Swal.fire({
           icon: "success",
-          title: "Created",
+          title: "success",
           text: "User Successfully Created.",
         });
+        profileUpdate(name, photoUrl)
+          .then(() => {})
+          .catch(() => {});
       })
       .catch((error) => {
         console.error(error);
@@ -133,7 +136,7 @@ const Register = () => {
                 // onClick={() => handleSocialLogin(googleLogin)}
                 className="bg-white btn text-xl w-full"
               >
-               Google
+                Google
               </button>
             </div>
 

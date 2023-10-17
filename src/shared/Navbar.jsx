@@ -1,7 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo-white.png";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // logout
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "success",
+          text: "User logOut successfully.",
+        });
+      })
+      .catch();
+  };
   const navLinks = (
     <>
       <NavLink
@@ -80,7 +96,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {/* {user ? (
+          {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -105,7 +121,7 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-          )} */}
+          )}
         </div>
       </div>
     </div>
