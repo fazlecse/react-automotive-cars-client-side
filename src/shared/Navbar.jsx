@@ -2,47 +2,48 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo-white.png";
 
 const Navbar = () => {
-    const navLinks = (
-        <>
-          <NavLink
-            to="/"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "text-primary" : ""
-            }
-          >
-            Home
-          </NavLink>
-    
-          <NavLink
-            to="/aboutDetails"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "text-primary" : ""
-            }
-          >
-            Add Product
-          </NavLink>
-    
-          <NavLink
-            to="/feature"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "text-primary" : ""
-            }
-          >
-            My Cart
-          </NavLink>
-    
-          <NavLink
-            to="/login"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "text-primary" : ""
-            }
-          >
-            Login
-          </NavLink>
-        </>
-    );
-    return (
-        <div className="navbar container mx-auto px-3 sm:px-0 py-5 text-center">
+  const navLinks = (
+    <>
+      <NavLink
+        to="/"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-primary" : ""
+        }
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/aboutDetails"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-primary" : ""
+        }
+      >
+        Add Product
+      </NavLink>
+
+      <NavLink
+        to="/feature"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-primary" : ""
+        }
+      >
+        My Cart
+      </NavLink>
+
+      <NavLink
+        to="/login"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-primary" : ""
+        }
+      >
+        Login
+      </NavLink>
+    </>
+  );
+  return (
+    <div className="bg-black">
+      <div className="navbar container mx-auto px-3 sm:px-0 py-5 text-center">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -68,7 +69,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-  
+
           <NavLink to={"/"} className="w-36">
             <img src={logo} alt="" />
           </NavLink>
@@ -105,10 +106,10 @@ const Navbar = () => {
               </button>
             </Link>
           )} */}
-  
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Navbar;
