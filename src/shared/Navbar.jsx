@@ -117,7 +117,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to={"/login"}>
-              <button className="btn bg-gradient-to-r from-[#F029A0] to-[#F0B000] text-white">
+              <button className="btn bg-primary border-primary hover:bg-hoverColor hover:border-primary text-white">
                 Login
               </button>
             </Link>

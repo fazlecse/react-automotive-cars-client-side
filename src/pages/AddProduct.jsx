@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
@@ -20,6 +22,27 @@ const AddProduct = () => {
       imgUrl,
     };
     console.log(newProduct);
+
+    //send data to the server
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+      });
   };
 
   return (

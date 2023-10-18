@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, profileUpdate } = useContext(AuthContext);
+  const { createUser, profileUpdate, googleLogin } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -61,6 +61,16 @@ const Register = () => {
           text: error.message,
         });
       });
+  };
+  //   Social login
+  const handleSocialLogin = (media) => {
+    media().then(() => {
+      Swal.fire({
+        icon: "success",
+        title: "success",
+        text: "User login successfully.",
+      });
+    });
   };
   return (
     <div className="hero min-h-screen py-10 bg-[url('https://i.ibb.co/jfdmSZy/photo-hoteam-196xdw-XDHc0-unsplash.jpg')] bg-no-repeat bg-cover ">
@@ -133,7 +143,7 @@ const Register = () => {
             <div className="divider  text-white">OR</div>
             <div className="">
               <button
-                // onClick={() => handleSocialLogin(googleLogin)}
+                onClick={() => handleSocialLogin(googleLogin)}
                 className="bg-white btn text-xl w-full"
               >
                 Google
