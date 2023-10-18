@@ -90,7 +90,7 @@ const Login = () => {
 
             <p className="mt-4 text-center  text-white">
               Already have an account?
-              <Link className="text-primary" to={"/login"}>
+              <Link className="text-primary" to={"/register"}>
                 Register
               </Link>
             </p>
