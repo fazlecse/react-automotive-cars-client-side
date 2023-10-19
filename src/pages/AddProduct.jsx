@@ -1,6 +1,31 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
+  const categoryList = useLoaderData();
+  const handleCategory = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const brandName = form.brandName.value;
+    const imgUrl = form.imgUrl.value;
+    const newCategory = {
+      brandName,
+      imgUrl,
+    };
+    console.log(newCategory);
+    //   send data category wise to the server
+    fetch("http://localhost:5000/category", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCategory),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,8 +47,7 @@ const AddProduct = () => {
       imgUrl,
     };
     console.log(newProduct);
-
-    //send data to the server
+    //send data product wise to the server
     fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
@@ -48,6 +72,43 @@ const AddProduct = () => {
   return (
     <div className="container mx-auto p-3 sm:p-2">
       <form
+        onSubmit={handleCategory}
+        className=" max-w-5xl mx-auto p-8 my-10 bg-bgColor rounded-md"
+      >
+        <h2 className="text-3xl font-bold text-center mb-5">Add category</h2>
+        <div className="flex gap-10">
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Brand Name</span>
+            </label>
+            <input
+              type="text"
+              name="brandName"
+              placeholder="Enter Brand Name"
+              className="input input-bordered w-full"
+            />
+          </div>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Image</span>
+            </label>
+            <input
+              type="text"
+              name="imgUrl"
+              placeholder="Enter Iamage URL"
+              className="input input-bordered w-full"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          className="btn w-full mt-5 bg-primary border-primary hover:bg-hoverColor hover:border-primary text-white"
+        >
+          Add Category
+        </button>
+      </form>
+
+      <form
         onSubmit={handleAddProduct}
         className=" max-w-5xl mx-auto p-8 my-10 bg-bgColor rounded-md"
       >
@@ -65,16 +126,20 @@ const AddProduct = () => {
               className="input input-bordered w-full"
             />
           </div>
-          <div className="form-control w-full ">
+          <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Brand Name</span>
             </label>
-            <input
-              type="text"
-              name="brandName"
-              placeholder="Enter Brand Name"
-              className="input input-bordered w-full"
-            />
+            <select className="select select-bordered" name="brandName">
+              <option value="" selected disabled>
+                Select One
+              </option>
+              {categoryList.map((category) => (
+                <option key={category._id} value={category.brandName}>
+                  {category.brandName}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
@@ -143,7 +208,7 @@ const AddProduct = () => {
           type="submit"
           className="btn w-full mt-5 bg-primary border-primary hover:bg-hoverColor hover:border-primary text-white"
         >
-          Update
+          Add Product
         </button>
       </form>
     </div>
