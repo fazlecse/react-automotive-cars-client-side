@@ -14,13 +14,16 @@ const AddProduct = () => {
     };
     console.log(newCategory);
     //   send data category wise to the server
-    fetch("http://localhost:5000/category", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCategory),
-    })
+    fetch(
+      "https://react-automotive-server-assignment-ten.vercel.app/category",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newCategory),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -56,13 +59,16 @@ const AddProduct = () => {
     };
     console.log(newProduct);
     //send data product wise to the server
-    fetch("http://localhost:5000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
+    fetch(
+      "https://react-automotive-server-assignment-ten.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -139,9 +145,6 @@ const AddProduct = () => {
               <span className="label-text">Brand Name</span>
             </label>
             <select className="select select-bordered" name="brandName">
-              <option value="" selected disabled>
-                Select One
-              </option>
               {categoryList.map((category) => (
                 <option key={category._id} value={category.brandName}>
                   {category.brandName}

@@ -20,7 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/categoryList"),
+        loader: () =>
+          fetch(
+            "https://react-automotive-server-assignment-ten.vercel.app/categoryList"
+          ),
       },
       {
         path: "/products/:brandName",
@@ -30,7 +33,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.brandName}`),
+          fetch(
+            `https://react-automotive-server-assignment-ten.vercel.app/products/${params.brandName}`
+          ),
       },
       {
         path: "/addproduct",
@@ -39,7 +44,10 @@ const router = createBrowserRouter([
             <AddProduct></AddProduct>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/categoryList"),
+        loader: () =>
+          fetch(
+            "https://react-automotive-server-assignment-ten.vercel.app/categoryList"
+          ),
       },
       {
         path: "/update-product/:id",

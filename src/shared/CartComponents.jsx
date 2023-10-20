@@ -1,6 +1,7 @@
 import Rating from "react-rating";
 import starRed from "../assets/star-red.png";
 import starGrey from "../assets/star-grey.png";
+import PropTypes from 'prop-types';
 
 const CartComponents = ({ cart }) => {
   const { name, imgUrl, brandName, price, type,rating } = cart;
@@ -28,5 +29,7 @@ const CartComponents = ({ cart }) => {
     </div>
   );
 };
-
+CartComponents.propTypes={
+    cart:PropTypes.object,
+}
 export default CartComponents;

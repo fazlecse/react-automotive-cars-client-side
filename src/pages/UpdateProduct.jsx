@@ -7,7 +7,6 @@ const UpdateProduct = () => {
   const [oldData, setOldData] = useState({});
   const [brands, setBrands] = useState([]);
   const { id } = useParams();
-  console.log(id);
 
   const handelChange = (e) => {
     const { name, value } = e.target;
@@ -15,13 +14,17 @@ const UpdateProduct = () => {
   };
 
   const getOldData = () => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(
+      `https://react-automotive-server-assignment-ten.vercel.app/product/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setOldData(data));
   };
 
   const getAllBrands = () => {
-    fetch(`http://localhost:5000/categoryList`)
+    fetch(
+      `https://react-automotive-server-assignment-ten.vercel.app/categoryList`
+    )
       .then((res) => res.json())
       .then((data) => setBrands(data));
   };
@@ -33,13 +36,16 @@ const UpdateProduct = () => {
 
   const handelUpdate = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/product/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(oldData),
-    })
+    fetch(
+      `https://react-automotive-server-assignment-ten.vercel.app/product/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(oldData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
