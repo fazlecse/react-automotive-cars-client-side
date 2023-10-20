@@ -37,7 +37,7 @@ const ProductDetails = () => {
       <div className="container p-3 sm:p-2 mx-auto bg-white rounded-2xl">
         <div className="p-2 sm:p-5 ">
           <img
-            className="w-full max-h-[500px] object-cover rounded-xl"
+            className="w-full max-h-[600px] object-cover rounded-xl"
             src={productData.imgUrl}
             alt=""
           />

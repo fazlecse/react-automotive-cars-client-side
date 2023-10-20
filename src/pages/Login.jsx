@@ -52,7 +52,7 @@ const Login = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black">
           <form onSubmit={handleLogin} className="card-body ">
             <h1 className="text-3xl font-chakraPetch font-semibold text-white">
-              Welcome To Galactic
+              Welcome To Vehica
             </h1>
 
             <div className="form-control">

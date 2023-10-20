@@ -22,7 +22,7 @@ const Products = () => {
             {products.map((product) => (
               <div key={product._id}>
                 <img
-                  className="h-[300px] md:h-[500px] object-cover w-full rounded-lg"
+                  className="h-[300px] md:h-[600px] object-cover w-full rounded-lg"
                   src={product.imgUrl}
                   alt=""
                 />
