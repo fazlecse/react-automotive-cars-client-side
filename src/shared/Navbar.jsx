@@ -39,7 +39,7 @@ const Navbar = () => {
       </NavLink>
 
       <NavLink
-        to="/feature"
+        to="/mycart"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "text-primary" : ""
         }

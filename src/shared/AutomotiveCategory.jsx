@@ -6,8 +6,8 @@ const AutomotiveCategory = ({ loadCategories }) => {
   return (
     <div>
       <Link to={`/products/${brandName}`}>
-        <div className="p-3 bg-white rounded-md ">
-          <img src={imgUrl} alt="" />
+        <div className="p-3 bg-white rounded-md h-full">
+          <img className="h-[250px] w-full" src={imgUrl} alt="" />
           <h2 className="text-2xl font-bold text-center mt-4"> {brandName}</h2>
         </div>
       </Link>

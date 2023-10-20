@@ -24,6 +24,14 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Successfully category added.",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
       });
   };
   const handleAddProduct = (event) => {
@@ -61,7 +69,7 @@ const AddProduct = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Do you want to continue",
+            text: "Successfully product added.",
             icon: "success",
             confirmButtonText: "OK",
           });
