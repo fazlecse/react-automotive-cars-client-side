@@ -1,8 +1,13 @@
-# React + Vite
+# React + TailWind CSS + Firebase + Express + MongoDB
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Automotive] (https://react-automotive-53bae.web.app/)
 
-Currently, two official plugins are available:
+## Feature :
+- Category wise product every product have details you can add to cart.
+- Add product page you can add your product information easily.
+- Also you can update your product
+- Here is have Register & Login system , you can login Email or social media.
+- Also have private route you can't go there when you not logged in.
+- Dark & light mode 
+- 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
