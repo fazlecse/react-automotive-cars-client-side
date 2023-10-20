@@ -34,7 +34,7 @@ const ProductDetails = () => {
   return (
     <div className="bg-bgColor py-16">
       <div className="container p-3 sm:p-2 mx-auto bg-white rounded-2xl">
-        <div className=" p-5 ">
+        <div className="p-2 sm:p-5 ">
         <img
           className="w-full max-h-[500px] object-cover rounded-xl"
           src={productData.imgUrl}

@@ -84,7 +84,7 @@ const AddProduct = () => {
         className=" max-w-5xl mx-auto p-8 my-10 bg-bgColor rounded-md"
       >
         <h2 className="text-3xl font-bold text-center mb-5">Add category</h2>
-        <div className="flex gap-10">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Brand Name</span>
@@ -122,7 +122,7 @@ const AddProduct = () => {
       >
         <h2 className="text-3xl font-bold text-center mb-5">Add New Product</h2>
 
-        <div className="flex gap-10">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Name</span>
@@ -151,7 +151,7 @@ const AddProduct = () => {
           </div>
         </div>
 
-        <div className="flex gap-10 mt-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 mt-5">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Type</span>
@@ -175,7 +175,7 @@ const AddProduct = () => {
             />
           </div>
         </div>
-        <div className="flex gap-10 mt-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 mt-5">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Short description</span>
@@ -199,7 +199,7 @@ const AddProduct = () => {
             />
           </div>
         </div>
-        <div className="flex gap-10 mt-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 mt-5">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Image</span>

@@ -100,11 +100,11 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="p-5  dark:bg-[#1E293B] rounded-md relative space-y-2">
+                  <div className="p-5  bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes2} alt="" />
                     </div>
-                    <h3 className="text-xl font-semibold">Willard Donovan</h3>
+                    <h3 className="text-xl font-semibold">Mickey Arther</h3>
                     <p>Dublin, Ireland</p>
 
                     <div className="rating">
@@ -187,7 +187,7 @@ const Testimonial = () => {
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes4} alt="" />
                     </div>
-                    <h3 className="text-xl font-semibold">Willard Donovan</h3>
+                    <h3 className="text-xl font-semibold">Toom Cook</h3>
                     <p>Dublin, Ireland</p>
 
                     <div className="rating">
@@ -228,7 +228,7 @@ const Testimonial = () => {
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes5} alt="" />
                     </div>
-                    <h3 className="text-xl font-semibold">Willard Donovan</h3>
+                    <h3 className="text-xl font-semibold">Donovan Conwey</h3>
                     <p>Dublin, Ireland</p>
 
                     <div className="rating">
@@ -269,7 +269,7 @@ const Testimonial = () => {
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes6} alt="" />
                     </div>
-                    <h3 className="text-xl font-semibold">Willard Donovan</h3>
+                    <h3 className="text-xl font-semibold">Allen donald</h3>
                     <p>Dublin, Ireland</p>
 
                     <div className="rating">

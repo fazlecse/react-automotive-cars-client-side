@@ -62,7 +62,7 @@ const UpdateProduct = () => {
       >
         <h2 className="text-3xl font-bold text-center mb-5">Update Product</h2>
 
-        <div className="flex gap-10">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Name</span>
@@ -95,7 +95,7 @@ const UpdateProduct = () => {
           </div>
         </div>
 
-        <div className="flex gap-10 mt-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 mt-5">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Type</span>
@@ -123,7 +123,7 @@ const UpdateProduct = () => {
             />
           </div>
         </div>
-        <div className="flex gap-10 mt-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 mt-5">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Short description</span>
@@ -151,7 +151,7 @@ const UpdateProduct = () => {
             />
           </div>
         </div>
-        <div className="flex gap-10 mt-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 mt-5">
           <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Image</span>

@@ -2,7 +2,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useLoaderData } from "react-router-dom";
-import AutomotiveCategory from "../shared/AutomotiveCategory";
 import ProductsCard from "../shared/ProductsCard";
 
 const Products = () => {
@@ -44,15 +43,15 @@ const Products = () => {
     // ],
   };
   return (
-    <div className="bg-bgColor">
+    <div className="bg-bgColor py-16">
       <div className="container p-3 sm:p-2 mx-auto">
         <div>
-          <h2> Single Item</h2>
+         
           <Slider {...settings}>
             {products.map((product) => (
               <div key={product._id}>
                 <img
-                  className="h-[500px] object-cover w-full"
+                  className="h-[300px] md:h-[500px] object-cover w-full rounded-lg"
                   src={product.imgUrl}
                   alt=""
                 />

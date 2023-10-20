@@ -86,7 +86,7 @@ const Navbar = () => {
       >
         Login
       </NavLink>
-      <button className="text-xl text-white" onClick={handleThemeSwitch}>
+      <button className="text-xl mx-auto" onClick={handleThemeSwitch}>
         {theme === "light" ? <ImSun /> : <HiMoon />}
       </button>
     </>
@@ -96,7 +96,7 @@ const Navbar = () => {
       <div className="navbar container mx-auto px-3 sm:px-0 py-5 text-center">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -114,7 +114,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-5 text-lg font-normal text-white"
+              className="dark:bg-[#1E293B]  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-5 text-lg font-normal dark:text-white "
             >
               {navLinks}
             </ul>
@@ -131,7 +131,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img src={user.photoURL} />
@@ -139,13 +139,13 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="  dark:bg-[#1E293B] dark:text-white  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <h4>{user.displayName}</h4>
+                  <h4 className="dark:hover:text-white">{user.displayName}</h4>
                 </li>
                 <li>
-                  <button onClick={handleLogOut}>Logout</button>
+                  <button onClick={handleLogOut} className="dark:hover:text-white">Logout</button>
                 </li>
               </ul>
             </div>
