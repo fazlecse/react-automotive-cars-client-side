@@ -20,27 +20,30 @@ const ProductDetails = () => {
   useEffect(() => {
     getProductData();
   }, [id]);
-console.log(productData);
+  console.log(productData);
   const handelAddToCart = () => {
-    fetch("https://react-automotive-server-assignment-ten.vercel.app/productData",{
-      method: "POST",
-      headers:{
-        "content-type":"application/json",
-      },
-      body: JSON.stringify(productData),
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-      if(data.insertedId){
-        Swal.fire({
-          title: "Success!",
-          text: "Successfully product Data added.",
-          icon: "success",
-          confirmButtonText: "OK",
-        });
+    fetch(
+      "https://react-automotive-server-assignment-ten.vercel.app/productData",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(productData),
       }
-    })
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Successfully product Data added.",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+      });
   };
 
   return (
