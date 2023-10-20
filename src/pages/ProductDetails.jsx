@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { setDataLocalStorage } from "../utilities/LocalStorage";
 import Swal from "sweetalert2";
 import Rating from "react-rating";
 import starRed from "../assets/star-red.png";
@@ -21,15 +20,27 @@ const ProductDetails = () => {
   useEffect(() => {
     getProductData();
   }, [id]);
-
+console.log(productData);
   const handelAddToCart = () => {
-    setDataLocalStorage(productData);
-    Swal.fire({
-      title: "Success!",
-      text: "Successfully product added.",
-      icon: "success",
-      confirmButtonText: "OK",
-    });
+    fetch("https://react-automotive-server-assignment-ten.vercel.app/productData",{
+      method: "POST",
+      headers:{
+        "content-type":"application/json",
+      },
+      body: JSON.stringify(productData),
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      if(data.insertedId){
+        Swal.fire({
+          title: "Success!",
+          text: "Successfully product Data added.",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+      }
+    })
   };
 
   return (

@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import CartComponents from "../shared/CartComponents";
-import { getFromLocalStorage } from "../utilities/LocalStorage";
+
 
 const MyCart = () => {
-  const cartsData = getFromLocalStorage();
+  // const cartsData = getFromLocalStorage();
+  const productData = useLoaderData();
+  console.log(productData);
 
   return (
     <div className="bg-bgColor py-16">
@@ -11,7 +14,7 @@ const MyCart = () => {
           Cart Items
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-          {cartsData.map((cart, index) => (
+          {productData.map((cart, index) => (
             <CartComponents key={index} cart={cart} />
           ))}
         </div>
