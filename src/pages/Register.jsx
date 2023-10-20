@@ -1,9 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { createUser, profileUpdate, googleLogin } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
@@ -49,6 +51,7 @@ const Register = () => {
           title: "success",
           text: "User Successfully Created.",
         });
+        navigate("/");
         profileUpdate(name, photoUrl)
           .then(() => {})
           .catch(() => {});
@@ -60,6 +63,7 @@ const Register = () => {
           title: "Oops...",
           text: error.message,
         });
+
       });
   };
   //   Social login
@@ -70,6 +74,7 @@ const Register = () => {
         title: "success",
         text: "User login successfully.",
       });
+      navigate(location?.state ? location.state : "/");
     });
   };
   return (

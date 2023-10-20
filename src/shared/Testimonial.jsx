@@ -45,7 +45,7 @@ const Testimonial = () => {
     ],
   };
   return (
-    <div className="bg-bgColor">
+    <div className="bg-bgColor dark:bg-black dark:text-white">
       <div className="container mx-auto p-3 sm:p-2 ">
         <div className="py-16">
           <div className="text-center mb-10">
@@ -59,7 +59,7 @@ const Testimonial = () => {
             <div>
               <Slider {...settings}>
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5 bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes1} alt="" />
                     </div>
@@ -100,7 +100,7 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5  dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes2} alt="" />
                     </div>
@@ -142,7 +142,7 @@ const Testimonial = () => {
                 </div>
 
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5 bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes3} alt="" />
                     </div>
@@ -183,7 +183,7 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5 bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes4} alt="" />
                     </div>
@@ -224,7 +224,7 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5 bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes5} alt="" />
                     </div>
@@ -265,7 +265,7 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5 bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes6} alt="" />
                     </div>
@@ -306,7 +306,7 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="p-5 bg-white rounded-md relative space-y-2">
+                  <div className="p-5 bg-white dark:bg-[#1E293B] rounded-md relative space-y-2">
                     <div className="rounded-sm absolute -top-5 right-5  bg-white p-[4px]">
                       <img className="w-[60px] h-[60px] " src={tes7} alt="" />
                     </div>

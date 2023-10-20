@@ -2,8 +2,10 @@ import aboutImg from "../assets/about.jpg";
 import { FaCircleCheck } from "react-icons/fa6";
 const About = () => {
   return (
-    <div className="container mx-auto p-3 sm:p-2 ">
-      <div className="flex items-center flex-col sm:flex-row gap-8 py-16">
+    <div className="dark:bg-[#1E293B]">
+      <div className="container mx-auto p-3 sm:p-2 ">
+      
+      <div className="dark:text-white flex items-center flex-col sm:flex-row gap-8 py-16">
         <div className="sm:w-1/2">
           <img className="rounded-xl" src={aboutImg} alt="" />
         </div>
@@ -42,6 +44,9 @@ const About = () => {
         </div>
       </div>
     </div>
+    </div>
+
+    
   );
 };
 

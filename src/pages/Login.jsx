@@ -1,8 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
   const { logIn, googleLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
@@ -20,8 +23,9 @@ const Login = () => {
           icon: "success",
           title: "Success",
           text: "User Successfully Logged In.",
+          
         });
-        // navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error.message);
@@ -40,6 +44,7 @@ const Login = () => {
         title: "success",
         text: "User login successfully.",
       });
+      navigate(location?.state ? location.state : "/");
     });
   };
   return (

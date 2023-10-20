@@ -1,10 +1,41 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo-white.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { ImUser, ImSun } from "react-icons/im";
+import { HiMoon } from "react-icons/hi";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (localStorage.getItem("theme") === null) {
+      localStorage.setItem("theme", "light");
+    }
+  }, []);
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+      setTheme("dark");
+    } else {
+      html.classList.remove("dark");
+      setTheme("light");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    if (localStorage.getItem("theme") === "light") {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    }
+  };
   const { user, logOut } = useContext(AuthContext);
   // logout
   const handleLogOut = () => {
@@ -55,6 +86,9 @@ const Navbar = () => {
       >
         Login
       </NavLink>
+      <button className="text-xl text-white" onClick={handleThemeSwitch}>
+        {theme === "light" ? <ImSun /> : <HiMoon />}
+      </button>
     </>
   );
   return (
