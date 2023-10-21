@@ -8,6 +8,12 @@ import starGrey from "../assets/star-grey.png";
 const ProductDetails = () => {
   const { id } = useParams();
   const [productData, setProductData] = useState({});
+  const [addCartData, setAddCardData] = useState({});
+  delete addCartData._id;
+  // console.log(addCartData);
+
+
+
   const getProductData = () => {
     fetch(
       `https://react-automotive-server-assignment-ten.vercel.app/product/${id}`
@@ -15,12 +21,13 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         setProductData(data);
+        setAddCardData(data);
       });
   };
   useEffect(() => {
     getProductData();
   }, [id]);
-  console.log(productData);
+  // console.log(productData);
   const handelAddToCart = () => {
     fetch(
       "https://react-automotive-server-assignment-ten.vercel.app/productData",
