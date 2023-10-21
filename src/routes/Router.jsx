@@ -72,7 +72,10 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://react-automotive-server-assignment-ten.vercel.app/productData"),
+        loader: () =>
+          fetch(
+            "https://react-automotive-server-assignment-ten.vercel.app/productData"
+          ),
       },
       {
         path: "/register",
