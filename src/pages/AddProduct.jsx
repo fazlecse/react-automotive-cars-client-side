@@ -37,6 +37,7 @@ const AddProduct = () => {
         }
       });
   };
+  
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
